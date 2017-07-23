@@ -10,11 +10,11 @@ export default class PopulationSubHeader extends Component {
     USA: PropTypes.shape({
       population: PropTypes.number,
     }),
-    fetchPopulation: PropTypes.func,
+    fetchCountryPopulation: PropTypes.func,
   };
 
   componentDidMount () {
-    this.props.fetchPopulation();
+    this.props.fetchCountryPopulation();
   }
 
   getPopulationTile (title, location = {}) {

@@ -2,13 +2,16 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {isEmpty} from 'lodash'
 import PopulationSubHeader from '../containers/PopulationSubHeader';
+import CountryCard from './CountryCard';
 
 
 export default class CountriesList extends Component {
 
   static propTypes = {
     countries: PropTypes.array,
-    fetchCountries: PropTypes.func
+    fetchCountries: PropTypes.func,
+    fetchPopulation: PropTypes.func,
+    population: PropTypes.object,
   };
 
   static defaultProps = {
@@ -37,16 +40,23 @@ export default class CountriesList extends Component {
 
   listOfCountries() {
     return (
-      <ul>
-        {this.props.countries.map((country) => <li key={country}>{country}</li>)}
-      </ul>
-    );
+      <div>
+        {this.props.countries.map((country) => {
+          return (
+            <CountryCard key={country}
+                         country={country}
+                         fetchPopulation={this.props.fetchPopulation}
+                         {...this.props.population[country]} />
+          )
+        })}
+      </div>
+    )
   }
 
   render() {
     return (
       <div>
-        <PopulationSubHeader />
+        <PopulationSubHeader/>
         <h3> Shortest Country Names </h3>
         <p> Population of countries with shortest names </p>
         {this.getFetchButton()}

@@ -3,6 +3,7 @@ import moment from 'moment';
 
 const API_ROOT = 'http://api.population.io:80/1.0';
 const today = () => moment().format('YYYY-MM-DD');
+const currentYear = () => Number(moment().format('YYYY'));
 
 export class RESPONSE {
   static TOTAL_POPULATION = 'total_population';
@@ -27,4 +28,31 @@ export const fetchTotalPopulationToday = (country) => {
       })
       .catch(e => reject(e))
   })
+};
+
+/**
+ *
+ * @param country
+ */
+export const fetchGenderPopulation = (country) => {
+
+  const URL = `${API_ROOT}/population/${currentYear()}/${encodeURI(country)}`;
+  return new Promise((resolve, reject) => {
+    axios.get(URL)
+      .then(response => {
+        const result = response.data.reduce((acc, item) => {
+            acc.females += item.females;
+            acc.males += item.males;
+            acc.total += item.males + item.females;
+            return acc;
+          }, {
+            females: 0,
+            males: 0,
+            total: 0,
+          }
+        );
+        resolve(result);
+      })
+      .catch(e => reject(e))
+  });
 };

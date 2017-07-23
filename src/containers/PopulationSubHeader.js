@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PopulationSubHeader from '../components/PopulationSubHeader';
 import { COUNTRY } from '../constants/countries';
 import {bindActionCreators} from 'redux';
-import { fetchPopulationAction } from '../modules/populationModule';
+import { fetchTotalPopulationAction } from '../modules/populationModule';
 
 const mapStateToProps = (state) => {
   return {
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    fetchPopulation: fetchPopulationAction.bind(null, [COUNTRY.WORLD, COUNTRY.USA]),
+    fetchCountryPopulation: fetchTotalPopulationAction.bind(null, [COUNTRY.WORLD, COUNTRY.USA]),
   }, dispatch)
 };
 
