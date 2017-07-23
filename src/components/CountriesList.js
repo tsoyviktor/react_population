@@ -1,9 +1,19 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {isEmpty} from 'lodash'
+import PopulationSubHeader from '../containers/PopulationSubHeader';
 
 
 export default class CountriesList extends Component {
+
+  static propTypes = {
+    countries: PropTypes.array,
+    fetchCountries: PropTypes.func
+  };
+
+  static defaultProps = {
+    countries: []
+  };
 
   constructor() {
     super();
@@ -14,7 +24,7 @@ export default class CountriesList extends Component {
     this.props.fetchCountries();
   }
 
-  fetchButton() {
+  getFetchButton() {
     if (isEmpty(this.props.countries)) {
       return (
         <button onClick={this.fetchCountries}>
@@ -25,24 +35,23 @@ export default class CountriesList extends Component {
     return '';
   }
 
+  listOfCountries() {
+    return (
+      <ul>
+        {this.props.countries.map((country) => <li key={country}>{country}</li>)}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div>
-        <h3> This is CountriesList </h3>
-        {this.fetchButton()}
-        <ul>
-          {this.props.countries.map((country) => <li>{country}</li>)}
-        </ul>
+        <PopulationSubHeader />
+        <h3> Shortest Country Names </h3>
+        <p> Population of countries with shortest names </p>
+        {this.getFetchButton()}
+        {this.listOfCountries()}
       </div>
     );
   }
 }
-
-CountriesList.propTypes = {
-  countries: PropTypes.array,
-  fetchCountries: PropTypes.func
-};
-
-CountriesList.defaultProps = {
-  countries: []
-};

@@ -12,9 +12,9 @@ class App extends Component {
         <div className="App-header">
           <h2> World population Application</h2>
         </div>
-        <p className="App-intro">
+        <div className="App-intro">
             <CountriesList />
-        </p>
+        </div>
       </div>
     );
   }
