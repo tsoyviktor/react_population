@@ -14,7 +14,13 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "axios": "^0.16.2",
+    "history": "^4.6.3",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
     "react-redux": "^5.0.5",
-    "redux": "^3.7.2"
+    "react-router-redux": "next",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   }
 }
