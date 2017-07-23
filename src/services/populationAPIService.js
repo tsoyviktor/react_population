@@ -88,7 +88,7 @@ const validate = (birthDate, gender) => {
     errors.push(`Date should follow patter: ${DATE_FORMAT}`);
   }
   if (moment(birthDate).toDate() > new Date()) {
-    errors.push('Please select a birthday from the past');
+    errors.push('Please select birthday prior to this day');
   }
   return errors;
 };

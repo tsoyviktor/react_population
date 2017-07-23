@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 // import { ConnectedRouter } from 'react-router-redux'
 import { history, store } from '../store/index'
-import CountriesList from '../containers/CountriesList';
+import PageBody from '../components/PageBody';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
           <h2> World population Application</h2>
         </div>
         <div className="App-intro">
-            <CountriesList />
+            <PageBody />
         </div>
       </div>
     );

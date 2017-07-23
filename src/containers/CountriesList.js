@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import React from 'react';
-import CountriesList from '../components/PageBody';
+import CountriesList from '../components/CountriesList';
 import {bindActionCreators} from 'redux'
 import {fetchCountries} from '../modules/countriesModule';
 import { fetchExtendedPopulationAction } from '../modules/populationModule';
