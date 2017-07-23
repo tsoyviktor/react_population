@@ -1,6 +1,6 @@
 import { fetchTotalPopulationToday,
   fetchGenderPopulation
-} from '../services/populationService';
+} from '../services/populationAPIService';
 
 const POPULATION_ACTION = 'COUNTRY_DETAILS';
 const GENDER_POPULATION_ACTION = 'GENDER_POPULATION';

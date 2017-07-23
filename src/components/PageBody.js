@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 import {isEmpty} from 'lodash'
 import PopulationSubHeader from '../containers/PopulationSubHeader';
 import CountryCard from './CountryCard';
+import Ranking from '../containers/Ranking';
 
-
-export default class CountriesList extends Component {
+export default class PageBody extends Component {
 
   static propTypes = {
     countries: PropTypes.array,
     fetchCountries: PropTypes.func,
     fetchPopulation: PropTypes.func,
     population: PropTypes.object,
+    numberOfCountries: PropTypes.number,
+    totalPopulation: PropTypes.number,
   };
 
   static defaultProps = {
@@ -40,7 +42,11 @@ export default class CountriesList extends Component {
 
   listOfCountries() {
     return (
-      <div>
+      <div style={{height: '400px', overflowY: 'scroll', backgroundColor: 'lightgrey'}}>
+        <h3> Shortest Country Names </h3>
+        <p> Population of countries with shortest names </p>
+        <p> Total Population of Countries: {this.props.totalPopulation}</p>
+        <p> Number of Countries: {this.props.numberOfCountries}</p>
         {this.props.countries.map((country) => {
           return (
             <CountryCard key={country}
@@ -55,12 +61,11 @@ export default class CountriesList extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{paddingBottom: '40px'}}>
         <PopulationSubHeader/>
-        <h3> Shortest Country Names </h3>
-        <p> Population of countries with shortest names </p>
         {this.getFetchButton()}
         {this.listOfCountries()}
+        <Ranking />
       </div>
     );
   }

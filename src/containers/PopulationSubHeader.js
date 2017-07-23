@@ -1,8 +1,8 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import PopulationSubHeader from '../components/PopulationSubHeader';
-import { COUNTRY } from '../constants/countries';
+import {COUNTRY} from '../constants/countries';
 import {bindActionCreators} from 'redux';
-import { fetchTotalPopulationAction } from '../modules/populationModule';
+import {fetchTotalPopulationAction} from '../modules/populationModule';
 
 const mapStateToProps = (state) => {
   return {
