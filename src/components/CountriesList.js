@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CountryCard from './CountryCard';
 import PropTypes from 'prop-types';
 import {isEmpty} from 'lodash'
+import RaisedButton from 'material-ui/RaisedButton';
 import './CountriesList.css';
 
 export default class CountriesList extends Component {
@@ -26,9 +27,7 @@ export default class CountriesList extends Component {
   getFetchButton() {
     if (!this.hasInfo()) {
       return (
-        <button onClick={this.fetchCountries}>
-          Fetch
-        </button>
+        <RaisedButton primary={true} label="Fetch" onClick={this.fetchCountries} />
       )
     }
     return '';

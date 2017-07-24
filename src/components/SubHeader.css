@@ -1,3 +1,14 @@
 .SubHeader {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.Population {
+    font-style: italic;
+}
+
+.highlight {
+    background-color: #686868;
+    color: white;
+    font-weight: normal;
+    padding: 5px;
 }

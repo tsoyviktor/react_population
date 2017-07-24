@@ -2,6 +2,7 @@
   text-align: center;
   width: 800px;
   margin: 10px auto;
+  font-family: Roboto, sans-serif;
 }
 
 @media(max-width: 800px) {
@@ -28,4 +29,5 @@
   margin-bottom: 20px;
   margin-top: 20px;
   width: 100%;
+  box-sizing: border-box;
 }

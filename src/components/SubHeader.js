@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SubHeader.css';
+import Paper from 'material-ui/Paper';
 
 export default class PopulationSubHeader extends Component {
 
@@ -22,9 +23,11 @@ export default class PopulationSubHeader extends Component {
     const population = location.population || '';
     return (
       <div key={title} className="tile">
-        <h2>{title}</h2>
-        <h4>As of today</h4>
-        <h3>{population}</h3>
+        <Paper style={{padding: '30px', marginTop: '30px'}}>
+          <h4>{title}</h4>
+          <h5 className="highlight">As of today</h5>
+          <h4 className="Population highlight">{population}</h4>
+        </Paper>
       </div>
     );
   }
