@@ -1,9 +1,11 @@
 .Ranking .controls {
     justify-content: center;
+    align-items: flex-end;
 }
 
 .Ranking .info {
-    border: 2px solid darkgray;
+    font-family: 'Shadows Into Light', cursive !important;
+    border: 1px solid darkgray;
 }
 
 .controls > * {

@@ -23,7 +23,7 @@ export default class PopulationSubHeader extends Component {
     const population = location.population || '';
     return (
       <div key={title} className="tile">
-        <Paper style={{padding: '30px', marginTop: '30px'}}>
+        <Paper style={{padding: '30px', marginTop: '30px'}} zDepth={0}>
           <h4>{title}</h4>
           <h5 className="highlight">As of today</h5>
           <h4 className="Population highlight">{population}</h4>

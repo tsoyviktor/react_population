@@ -2,16 +2,20 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom'
 import './Ranking.css';
+import RaisedButton from 'material-ui/RaisedButton';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+import DatePicker from 'material-ui/DatePicker';
 
 export default class Ranking extends Component {
-
-  state = {
-    emptyInput: false,
-  };
 
   inputs = {
     date: null,
     sex: null,
+  };
+
+  state = {
+    sex: ''
   };
 
   static propTypes = {
@@ -32,17 +36,18 @@ export default class Ranking extends Component {
     super();
     this.fetchRanking = this.fetchRanking.bind(this);
     this.clear = this.clear.bind(this);
+    this.handleSexSelection = this.handleSexSelection.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
 
   fetchRanking() {
-    let {date, sex} = this.inputs;
-    this.props.fetchRanking(date.value, sex.value);
+    this.props.fetchRanking(this.state.date, this.state.sex);
   }
 
   scrollToInfo = () => {
     const node = ReactDOM.findDOMNode(this.info);
     if (node) {
-      node.scrollIntoView({behavior: 'smooth'});
+      node.scrollIntoView(true);
     }
   };
 
@@ -62,11 +67,11 @@ export default class Ranking extends Component {
       <div className="row info" ref={(info) => this.info = info}>
         <div>
           <p>DOB: {this.props.ranking.dob}</p>
-          <p>Your Rank in the world</p>
+          <p>Gender: {this.props.ranking.sex}</p>
         </div>
 
         <div>
-          <p>Gender: {this.props.ranking.sex}</p>
+          <p>Your Rank in the world</p>
           <p>You are ranked: {this.props.ranking.rank}</p>
         </div>
       </div>
@@ -75,11 +80,19 @@ export default class Ranking extends Component {
 
   getActionButton() {
     const button = !this.props.ranking.rank ?
-      <button onClick={this.fetchRanking}>Fetch</button>
-      : <button onClick={this.clear} style={{background: 'red'}}>Clear</button>;
+      <RaisedButton onClick={this.fetchRanking}>Fetch</RaisedButton>
+      : <RaisedButton onClick={this.clear} secondary={true}>Clear</RaisedButton>;
     return (
       <div>{button}</div>
     );
+  }
+
+  handleSexSelection(event, index, sex) {
+    this.setState({sex})
+  }
+
+  handleDateChange(event, date) {
+    this.setState({date})
   }
 
   render() {
@@ -89,12 +102,16 @@ export default class Ranking extends Component {
         <h5> Enter Your information to check where you rank</h5>
         <div>
           <div className="controls row">
-            <input type="date" ref={(input) => this.inputs.date = input} placeholder="Date of Birth"/>
+            <DatePicker
+              onChange={this.handleDateChange}
+              autoOk={true}
+              hintText="Birthday" />
 
-            <select ref={(select) => this.inputs.sex = select}>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
+            <SelectField value={this.state.sex} onChange={this.handleSexSelection} floatingLabelText="Gender">
+              <MenuItem value="male" primaryText="Male"/>
+              <MenuItem value="female" primaryText="Female"/>
+            </SelectField>
+
             {this.getActionButton()}
           </div>
           <div className="list">
