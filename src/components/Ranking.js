@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {isEmpty} from 'lodash';
+import ReactDOM from 'react-dom'
+import './Ranking.css';
 
 export default class Ranking extends Component {
 
@@ -38,6 +39,17 @@ export default class Ranking extends Component {
     this.props.fetchRanking(date.value, sex.value);
   }
 
+  scrollToInfo = () => {
+    const node = ReactDOM.findDOMNode(this.info);
+    if (node) {
+      node.scrollIntoView({behavior: 'smooth'});
+    }
+  };
+
+  componentDidUpdate() {
+    this.scrollToInfo();
+  }
+
   clear() {
     this.props.clear();
   }
@@ -47,16 +59,16 @@ export default class Ranking extends Component {
       return '';
     }
     return (
-      <div className="row">
-        <p className="row">
+      <div className="row info" ref={(info) => this.info = info}>
+        <div>
           <p>DOB: {this.props.ranking.dob}</p>
           <p>Your Rank in the world</p>
-        </p>
+        </div>
 
-        <p className="row">
+        <div>
           <p>Gender: {this.props.ranking.sex}</p>
           <p>You are ranked: {this.props.ranking.rank}</p>
-        </p>
+        </div>
       </div>
     );
   }
@@ -64,32 +76,33 @@ export default class Ranking extends Component {
   getActionButton() {
     const button = !this.props.ranking.rank ?
       <button onClick={this.fetchRanking}>Fetch</button>
-    : <button onClick={this.clear} style={{background: 'red'}}>Clear</button>;
+      : <button onClick={this.clear} style={{background: 'red'}}>Clear</button>;
     return (
       <div>{button}</div>
     );
   }
 
-  render () {
+  render() {
     return (
-      <div>
+      <div className="Ranking">
         <h3> Check Your Ranking</h3>
         <h5> Enter Your information to check where you rank</h5>
         <div>
+          <div className="controls row">
+            <input type="date" ref={(input) => this.inputs.date = input} placeholder="Date of Birth"/>
 
-          <input type="date" ref={(input) => this.inputs.date = input } placeholder="Date of Birth"/>
-
-          <select ref={(select) => this.inputs.sex = select }>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-          {this.getActionButton()}
-          {this.getRanking()}
-
-          <p style={{color: 'red', fontSize: '.7em'}}>
-            {this.props.ranking.error}
-          </p>
-
+            <select ref={(select) => this.inputs.sex = select}>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            {this.getActionButton()}
+          </div>
+          <div className="list">
+            {this.getRanking()}
+            <p style={{color: 'red', fontSize: '.7em'}}>
+              {this.props.ranking.error}
+            </p>
+          </div>
         </div>
       </div>
     );

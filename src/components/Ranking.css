@@ -1,0 +1,11 @@
+.Ranking .controls {
+    justify-content: center;
+}
+
+.Ranking .info {
+    border: 2px solid darkgray;
+}
+
+.controls > * {
+    margin-left: 35px;
+}

@@ -53,7 +53,7 @@ export default class CountriesList extends Component {
   getCountryTiles() {
     if (this.hasInfo()) {
       return (
-        <div style={{maxHeight: '400px', overflowY: 'scroll'}} className="CountriesList__list">
+        <div style={{maxHeight: '400px', overflowY: 'scroll'}} className="CountriesList__list list">
           {this.props.countries.map((country) => {
             return (
               <CountryCard key={country}
