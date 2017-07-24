@@ -1,31 +1,27 @@
-import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-// import { ConnectedRouter } from 'react-router-redux'
-import { history, store } from '../store/index'
+import React, {Component} from 'react';
+import {Provider} from 'react-redux';
+import Header from '../components/Header';
 import PageBody from '../components/PageBody';
+import {store} from '../store'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2> World population Application</h2>
-        </div>
-        <div className="App-intro">
-            <PageBody />
-        </div>
+        <Header/>
+        <PageBody/>
       </div>
     );
   }
 }
 
 const ReduxApp = () => {
-    return (
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    );
+  return (
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  );
 };
 
 export default ReduxApp;

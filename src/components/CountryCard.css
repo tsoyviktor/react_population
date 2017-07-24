@@ -1,0 +1,8 @@
+.CountryCard {
+    border: 2px solid darkgray;
+    margin: 25px 0;
+}
+
+.CountryCard__country {
+    font-size: 1em;
+}

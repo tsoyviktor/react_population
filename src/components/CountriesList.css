@@ -1,0 +1,8 @@
+.CountriesList {
+    margin-bottom: 25px;
+}
+
+.CountriesList__list {
+    border: 1px solid black;
+    padding: 10px;
+}

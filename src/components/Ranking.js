@@ -47,11 +47,16 @@ export default class Ranking extends Component {
       return '';
     }
     return (
-      <div style={{border: '1px solid black'}}>
-        <h4>Your Rank in the world</h4>
-        <span>DOB: {this.props.ranking.dob}</span>
-        <span>You are ranked: {this.props.ranking.rank}</span>
-        <span>Gender: {this.props.ranking.sex}</span>
+      <div className="row">
+        <p className="row">
+          <p>DOB: {this.props.ranking.dob}</p>
+          <p>Your Rank in the world</p>
+        </p>
+
+        <p className="row">
+          <p>Gender: {this.props.ranking.sex}</p>
+          <p>You are ranked: {this.props.ranking.rank}</p>
+        </p>
       </div>
     );
   }

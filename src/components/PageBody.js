@@ -7,7 +7,7 @@ export default class PageBody extends Component {
 
   render() {
     return (
-      <div style={{paddingBottom: '40px'}}>
+      <div>
         <PopulationSubHeader />
         <CountriesList />
         <Ranking />
