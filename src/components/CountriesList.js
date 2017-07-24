@@ -3,6 +3,9 @@ import CountryCard from './CountryCard';
 import PropTypes from 'prop-types';
 import {isEmpty} from 'lodash'
 import RaisedButton from 'material-ui/RaisedButton';
+import {List} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+
 import './CountriesList.css';
 
 export default class CountriesList extends Component {
@@ -52,15 +55,19 @@ export default class CountriesList extends Component {
   getCountryTiles() {
     if (this.hasInfo()) {
       return (
-        <div style={{maxHeight: '400px', overflowY: 'scroll'}} className="CountriesList__list list">
-          {this.props.countries.map((country) => {
-            return (
-              <CountryCard key={country}
-                           country={country}
-                           fetchPopulation={this.props.fetchPopulation}
-                           {...this.props.population[country]} />
-            )
-          })}
+        <div className="CountriesList__list list">
+          <List>
+            {this.props.countries.map((country) => {
+              return (
+                <div key={country}>
+                  <CountryCard country={country}
+                               fetchPopulation={this.props.fetchPopulation}
+                               {...this.props.population[country]} />
+                  <Divider />
+                </div>
+              )
+            })}
+          </List>
         </div>
       )
     }
