@@ -5,7 +5,7 @@ import {COUNTRY} from "../constants/countries";
 
 const API_ROOT = 'http://api.population.io:80/1.0';
 const DATE_FORMAT = 'YYYY-MM-DD';
-const today = () => moment().format('YYYY-MM-DD');
+const today = () => moment().format(DATE_FORMAT);
 const currentYear = () => Number(moment().format('YYYY'));
 
 export class RESPONSE {
@@ -61,7 +61,14 @@ export const fetchGenderPopulation = (country) => {
   });
 };
 
+/**
+ *
+ * @param birthDate
+ * @param gender
+ * @return {Promise}
+ */
 export const fetchRanking = (birthDate, gender) => {
+  birthDate = moment(birthDate).format(DATE_FORMAT);
   return new Promise((resolve, reject) => {
     const errors = validate(birthDate, gender);
     if (!isEmpty(errors)) {
@@ -79,6 +86,12 @@ export const fetchRanking = (birthDate, gender) => {
   });
 };
 
+/**
+ *
+ * @param birthDate
+ * @param gender
+ * @return {Array}
+ */
 const validate = (birthDate, gender) => {
   let errors = [];
   if (!gender) {

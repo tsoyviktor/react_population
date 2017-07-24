@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76ed1974-dcd6-4635-ac27-df150535c689" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Ranking.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/App.css" afterPath="$PROJECT_DIR$/src/components/App.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/CountriesList.css" afterPath="$PROJECT_DIR$/src/components/CountriesList.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/CountriesList.js" afterPath="$PROJECT_DIR$/src/components/CountriesList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Ranking.js" afterPath="$PROJECT_DIR$/src/components/Ranking.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/populationAPIService.js" afterPath="$PROJECT_DIR$/src/services/populationAPIService.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,6 +63,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="populationAPIService.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/services/populationAPIService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-910">
+              <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1500862901000" expanded="true" signature="2487:2493" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CountriesList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/CountriesList.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CountriesList.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CountriesList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CountriesList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="67" column="14" lean-forward="true" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+            <state relative-caret-position="395">
+              <caret line="68" column="3" lean-forward="false" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -193,7 +202,6 @@
         <option value="$PROJECT_DIR$/src/modules/rankingModule.js" />
         <option value="$PROJECT_DIR$/src/constants/countries.js" />
         <option value="$PROJECT_DIR$/src/containers/CountriesList.js" />
-        <option value="$PROJECT_DIR$/src/services/populationAPIService.js" />
         <option value="$PROJECT_DIR$/src/components/Header.css" />
         <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
@@ -204,10 +212,11 @@
         <option value="$PROJECT_DIR$/src/components/CountryCard.css" />
         <option value="$PROJECT_DIR$/src/components/CountryCard.js" />
         <option value="$PROJECT_DIR$/src/components/Ranking.css" />
-        <option value="$PROJECT_DIR$/src/components/CountriesList.js" />
         <option value="$PROJECT_DIR$/src/components/App.css" />
         <option value="$PROJECT_DIR$/src/components/CountriesList.css" />
         <option value="$PROJECT_DIR$/src/components/Ranking.js" />
+        <option value="$PROJECT_DIR$/src/components/CountriesList.js" />
+        <option value="$PROJECT_DIR$/src/services/populationAPIService.js" />
       </list>
     </option>
   </component>
@@ -362,7 +371,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41326000" />
+    <option name="totallyTimeSpent" value="41403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -431,7 +440,7 @@
           <caret line="85" column="3" lean-forward="false" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1500851036000" expanded="true" signature="2299:2305" ph="{...}" />
+            <marker date="1500862901000" expanded="true" signature="2487:2493" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -538,6 +547,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -663,17 +673,6 @@
         <state relative-caret-position="575">
           <caret line="48" column="16" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/populationAPIService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="66" column="27" lean-forward="false" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1500851036000" expanded="true" signature="2299:2305" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,10 +802,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CountriesList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="67" column="14" lean-forward="true" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+        <state relative-caret-position="395">
+          <caret line="68" column="3" lean-forward="false" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/populationAPIService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-910">
+          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1500862901000" expanded="true" signature="2487:2493" ph="{...}" />
           </folding>
         </state>
       </provider>

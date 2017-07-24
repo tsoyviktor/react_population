@@ -68,7 +68,6 @@ export default class CountriesList extends Component {
     return '';
   }
 
-
   render() {
     return (
       <div className="CountriesList">
